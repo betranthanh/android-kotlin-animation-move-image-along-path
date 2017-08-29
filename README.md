@@ -1,6 +1,6 @@
 # Android Kotlin animation move images along a path
 #### Description:
-* Use ```frescolib``` to load image from the internet http://frescolib.org/
+* Use ```frescolib``` to load image
 * Use ```Canvas``` to draw the path: ```drawLine```, ```drawArc```
 * Calculate position to determin which image user taped 
 * ...

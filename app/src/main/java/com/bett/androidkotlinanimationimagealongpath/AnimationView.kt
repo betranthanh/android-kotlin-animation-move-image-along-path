@@ -111,6 +111,9 @@ class AnimationView : View {
                 center_x + radius,
                 centerYBottom + radius)
 
+        // -------------------------------------------------------------------------
+        // ------------- define Path where images move along -----------------------
+        // -------------------------------------------------------------------------
         animPath.reset()
         animPath.moveTo(PADDING + STROKE_WIDTH, height - radius - PADDING)
         animPath.lineTo(PADDING + STROKE_WIDTH, center_y)
@@ -118,17 +121,13 @@ class AnimationView : View {
         animPath.lineTo(PADDING.toFloat() + STROKE_WIDTH.toFloat() + radius * 2, height - radius - PADDING)
         animPath.arcTo(ovalBottom, 360f, 180f)
 
-//        pathMeasure = PathMeasure(this.animPath, false)
-//        if (Constants.PLAYER_DISTANT * players!!.size > pathMeasure.length) {
-//            animPath.lineTo(PADDING.toFloat() + STROKE_WIDTH.toFloat() + radius * 2,
-//                    height + Constants.PLAYER_DISTANT * players!!.size - pathMeasure.length)
-//        }
-
         pathMeasure = PathMeasure(animPath, false)
         pathLength = pathMeasure.length
 
 
-        //--------- Draw table line --------------------
+        // -------------------------------------------------------------------------
+        // ------------- Draw path -------------------------------------------------
+        // -------------------------------------------------------------------------
         canvas.drawLine(PADDING + STROKE_WIDTH, center_y, PADDING + STROKE_WIDTH, height - radius - PADDING, paint)
         canvas.drawArc(oval, 180f, 180f, false, paint)
         canvas.drawArc(ovalBottom, 360f, 180f, false, paint)
@@ -138,9 +137,9 @@ class AnimationView : View {
         for (i in players!!.indices) {
             val player = players!![i]
 
-            ///--------- Draw path but not work if have many player ------------
-            //            canvas.drawPath(animPath, paint);
-
+            // --------------------------------------------
+            // --------- Draw object ----------------------
+            // --------------------------------------------
             if (player.distance <= pathLength) {
                 pathMeasure.getPosTan(player.distance, player.pos, player.tan)
 
@@ -257,10 +256,6 @@ class AnimationView : View {
 
         invalidate()
         return true
-    }
-
-    fun getPlayers(): List<PlayerDto>? {
-        return players
     }
 
     fun setPlayers(players: List<PlayerDto>) {

@@ -3,8 +3,6 @@ package com.bett.androidkotlinanimationimagealongpath
 import android.app.Application
 import com.facebook.drawee.backends.pipeline.Fresco
 
-
-
 /**
  * Created by bett on 8/25/17.
  */

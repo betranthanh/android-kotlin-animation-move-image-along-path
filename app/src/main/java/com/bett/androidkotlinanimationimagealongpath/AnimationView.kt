@@ -230,7 +230,7 @@ class AnimationView : View {
                 return false
             }
             else -> return false
-        }//                autoRun = false;
+        }
 
         for (i in players!!.indices) {
             if (positions!!.size >= 2) {

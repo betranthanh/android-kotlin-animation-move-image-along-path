@@ -128,11 +128,11 @@ class AnimationView : View {
         // -------------------------------------------------------------------------
         // ------------- Draw path -------------------------------------------------
         // -------------------------------------------------------------------------
-        canvas.drawLine(PADDING + STROKE_WIDTH, center_y, PADDING + STROKE_WIDTH, height - radius - PADDING, paint)
-        canvas.drawArc(oval, 180f, 180f, false, paint)
-        canvas.drawArc(ovalBottom, 360f, 180f, false, paint)
+        paint?.let { canvas.drawLine(PADDING + STROKE_WIDTH, center_y, PADDING + STROKE_WIDTH, height - radius - PADDING, it) }
+        paint?.let { canvas.drawArc(oval, 180f, 180f, false, it) }
+        paint?.let { canvas.drawArc(ovalBottom, 360f, 180f, false, it) }
 
-        canvas.drawLine(PADDING.toFloat() + STROKE_WIDTH.toFloat() + radius * 2, center_y, PADDING.toFloat() + STROKE_WIDTH.toFloat() + radius * 2, height - radius - PADDING, paint)
+        paint?.let { canvas.drawLine(PADDING.toFloat() + STROKE_WIDTH.toFloat() + radius * 2, center_y, PADDING.toFloat() + STROKE_WIDTH.toFloat() + radius * 2, height - radius - PADDING, it) }
 
         for (i in players!!.indices) {
             val player = players!![i]
@@ -149,7 +149,7 @@ class AnimationView : View {
                 player.matrix.postTranslate(player.pos[0] - player.offsetX, player.pos[1] - player.offsetY)
 
                 if (player.bm != null) {
-                    canvas.drawBitmap(player.bm, player.matrix, null)
+                    canvas.drawBitmap(player.bm!!, player.matrix, null)
                 }
 
                 player.distance += step

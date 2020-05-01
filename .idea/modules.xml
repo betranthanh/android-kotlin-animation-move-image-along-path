@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidKotlinAnimationImageAlongPath.iml" filepath="$PROJECT_DIR$/AndroidKotlinAnimationImageAlongPath.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-kotlin-animation-move-image-along-path.iml" filepath="$PROJECT_DIR$/android-kotlin-animation-move-image-along-path.iml" group="android-kotlin-animation-move-image-along-path" />
+      <module fileurl="file://$PROJECT_DIR$/app/android-kotlin-animation-move-image-along-path-app.iml" filepath="$PROJECT_DIR$/app/android-kotlin-animation-move-image-along-path-app.iml" group="android-kotlin-animation-move-image-along-path/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
